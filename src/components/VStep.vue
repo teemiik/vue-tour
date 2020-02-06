@@ -15,8 +15,6 @@
 
     <slot name="actions">
       <div class="v-step__buttons">
-        <button @click.prevent="stop" v-if="!isLast" class="v-step__button">{{ labels.buttonSkip }}</button>
-        <button @click.prevent="previousStep" v-if="!isFirst" class="v-step__button">{{ labels.buttonPrevious }}</button>
         <button @click.prevent="nextStep" v-if="!isLast" class="v-step__button">{{ labels.buttonNext }}</button>
         <button @click.prevent="stop" v-if="isLast" class="v-step__button">{{ labels.buttonStop }}</button>
       </div>
@@ -161,9 +159,9 @@ export default {
 
 <style lang="scss" scoped>
   .v-step {
-    background: #50596c; /* #ffc107, #35495e */
+    background: #5F636A; /* #ffc107, #35495e */
     color: white;
-    max-width: 320px;
+    max-width: 660px;
     border-radius: 3px;
     filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
     padding: 1rem;
@@ -180,7 +178,7 @@ export default {
   }
 
   .v-step .v-step__arrow {
-    border-color: #50596c; /* #ffc107, #35495e */
+    border-color: #5F636A; /* #ffc107, #35495e */
 
     &--dark {
       border-color: #454d5d;
@@ -258,31 +256,24 @@ export default {
   }
 
   .v-step__content {
-    margin: 0 0 1rem 0;
+    margin: 1rem 0 1rem 0;
   }
 
   .v-step__button {
-    background: transparent;
-    border: .05rem solid white;
-    border-radius: .1rem;
-    color: white;
-    cursor: pointer;
-    display: inline-block;
-    font-size: .8rem;
-    height: 1.8rem;
-    line-height: 1rem;
-    outline: none;
-    margin: 0 0.2rem;
-    padding: .35rem .4rem;
-    text-align: center;
-    text-decoration: none;
-    transition: all .2s ease;
-    vertical-align: middle;
-    white-space: nowrap;
+    border: 0;
+    background: linear-gradient(270.06deg, #EEC833 0.01%, #F3A224 99.99%);
+    border-radius: 5px;
+    color: #FFFFFF;
+    box-shadow: 0 15px 15px -15px #F1B42B88;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 240px;
+    margin-top: 10px;
+    margin-bottom: 30px;
 
-    &:hover {
-      background-color: rgba(white, 0.95);
-      color: #50596c;
+    &:hover, &:active, &:focus {
+      box-shadow: none;
+      color: #FFFFFF !important;
     }
   }
 </style>
